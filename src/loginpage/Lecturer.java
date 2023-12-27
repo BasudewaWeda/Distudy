@@ -76,6 +76,9 @@ public class Lecturer extends javax.swing.JFrame {
         loadDiskusiSayaData();
         
         usernameLabel.setText(login.currentUser.getUsername());
+        
+        profileNameField.setText(login.currentUser.getUsername());
+        profileEmailField.setText(login.currentUser.getEmail());
     }
     
     private void loadMateriData() {
@@ -244,6 +247,14 @@ public class Lecturer extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         DiskusiSayaTable = new javax.swing.JTable();
         DiskusiSayaLabel2 = new javax.swing.JLabel();
+        ProfilePanel = new javax.swing.JPanel();
+        profileEmailLabel = new javax.swing.JLabel();
+        profileEmailField = new javax.swing.JTextField();
+        profileNameLabel = new javax.swing.JLabel();
+        profileNameField = new javax.swing.JTextField();
+        profileUpdateButton = new javax.swing.JButton();
+        profileLabel = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         DiskusiNavigator = new javax.swing.JButton();
         MateriNavigator = new javax.swing.JButton();
@@ -792,9 +803,7 @@ public class Lecturer extends javax.swing.JFrame {
                         .addComponent(DiskusiSayaLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(142, 142, 142)
                         .addGroup(AddDiskusiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AddDiskusiPanelLayout.createSequentialGroup()
-                                .addComponent(NamaDiskusiTerpilih, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(NamaDiskusiTerpilih, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(AddDiskusiPanelLayout.createSequentialGroup()
                                 .addComponent(JawabDiskusiField, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -891,6 +900,100 @@ public class Lecturer extends javax.swing.JFrame {
         );
 
         TabPane.addTab("tab1", AddDiskusiPanel);
+
+        ProfilePanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        profileEmailLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        profileEmailLabel.setForeground(new java.awt.Color(51, 153, 255));
+        profileEmailLabel.setText("Email");
+
+        profileEmailField.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        profileEmailField.setForeground(new java.awt.Color(51, 153, 255));
+        profileEmailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileEmailFieldActionPerformed(evt);
+            }
+        });
+
+        profileNameLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        profileNameLabel.setForeground(new java.awt.Color(51, 153, 255));
+        profileNameLabel.setText("Nama");
+
+        profileNameField.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        profileNameField.setForeground(new java.awt.Color(51, 153, 255));
+        profileNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileNameFieldActionPerformed(evt);
+            }
+        });
+
+        profileUpdateButton.setBackground(new java.awt.Color(51, 153, 255));
+        profileUpdateButton.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        profileUpdateButton.setForeground(new java.awt.Color(255, 255, 255));
+        profileUpdateButton.setText("Update Profile");
+        profileUpdateButton.setBorder(null);
+        profileUpdateButton.setBorderPainted(false);
+        profileUpdateButton.setFocusPainted(false);
+        profileUpdateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileUpdateButtonActionPerformed(evt);
+            }
+        });
+
+        profileLabel.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        profileLabel.setForeground(new java.awt.Color(51, 153, 255));
+        profileLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        profileLabel.setText("PROFILE");
+
+        jLabel6.setBackground(new java.awt.Color(51, 153, 255));
+        jLabel6.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginpage/logo2.png"))); // NOI18N
+
+        javax.swing.GroupLayout ProfilePanelLayout = new javax.swing.GroupLayout(ProfilePanel);
+        ProfilePanel.setLayout(ProfilePanelLayout);
+        ProfilePanelLayout.setHorizontalGroup(
+            ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProfilePanelLayout.createSequentialGroup()
+                .addGap(613, 613, 613)
+                .addComponent(profileLabel)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(ProfilePanelLayout.createSequentialGroup()
+                .addGap(499, 499, 499)
+                .addGroup(ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(profileNameLabel)
+                    .addComponent(profileEmailLabel))
+                .addGap(71, 71, 71)
+                .addGroup(ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(profileEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(profileNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(profileUpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(433, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProfilePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(552, 552, 552))
+        );
+        ProfilePanelLayout.setVerticalGroup(
+            ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProfilePanelLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(profileLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(profileNameLabel)
+                    .addComponent(profileNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(profileEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(profileEmailLabel))
+                .addGap(18, 18, 18)
+                .addComponent(profileUpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(390, Short.MAX_VALUE))
+        );
+
+        TabPane.addTab("tab1", ProfilePanel);
 
         getContentPane().add(TabPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, 840));
 
@@ -1200,6 +1303,7 @@ public class Lecturer extends javax.swing.JFrame {
     }//GEN-LAST:event_DiskusiNavigatorActionPerformed
 
     private void ProfileNavigatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileNavigatorActionPerformed
+        TabPane.setSelectedIndex(2);
         ProfileNavigator.setContentAreaFilled(true);
         ProfileNavigator.setBackground(new Color(51, 153, 255));
         
@@ -1387,6 +1491,44 @@ public class Lecturer extends javax.swing.JFrame {
         IdDiskusiHapusField.setText(model.getValueAt(i, 0).toString());
     }//GEN-LAST:event_DiskusiSayaTableMouseClicked
 
+    private void profileEmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileEmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_profileEmailFieldActionPerformed
+
+    private void profileNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_profileNameFieldActionPerformed
+
+    private void profileUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileUpdateButtonActionPerformed
+        if(profileNameField.getText().isEmpty() || profileEmailField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Isi semua field!");
+            return;
+        }
+        
+        if(!profileEmailField.getText().contains("@")) {
+            JOptionPane.showMessageDialog(null, "Email harus beriri '@'!");
+            return;
+        }
+        
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            String query = "UPDATE pengguna set name = ?, email = ? WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            statement.setString(1, profileNameField.getText());
+            statement.setString(2, profileEmailField.getText());
+            statement.setString(3, String.valueOf(login.currentUser.getId()));
+            
+            statement.execute();
+            
+            JOptionPane.showMessageDialog(null, "Profile berhasil di-update.");
+            usernameLabel.setText(profileNameField.getText());
+        }
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_profileUpdateButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1455,6 +1597,7 @@ public class Lecturer extends javax.swing.JFrame {
     private javax.swing.JButton PilihMateriButton;
     private javax.swing.JButton PilihMateriUpdateButton;
     private javax.swing.JButton ProfileNavigator;
+    private javax.swing.JPanel ProfilePanel;
     private javax.swing.JLabel ReferensiMateri;
     private javax.swing.JLabel ReferensiMateri1;
     private javax.swing.JLabel ReferensiMateri2;
@@ -1471,6 +1614,7 @@ public class Lecturer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1483,6 +1627,12 @@ public class Lecturer extends javax.swing.JFrame {
     private javax.swing.JLabel penambahanDiskusiLabel;
     private javax.swing.JLabel penambahanDiskusiLabel2;
     private javax.swing.JLabel penambahanMateriLabel;
+    private javax.swing.JTextField profileEmailField;
+    private javax.swing.JLabel profileEmailLabel;
+    private javax.swing.JLabel profileLabel;
+    private javax.swing.JTextField profileNameField;
+    private javax.swing.JLabel profileNameLabel;
+    private javax.swing.JButton profileUpdateButton;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }

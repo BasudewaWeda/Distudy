@@ -253,7 +253,7 @@ public class Login extends javax.swing.JFrame {
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 if(resultSet.next()) {
-                    currentUser = new User(resultSet.getString("name"), resultSet.getString("role"), resultSet.getInt("id"));
+                    currentUser = new User(resultSet.getString("name"), resultSet.getString("role"), resultSet.getInt("id"), resultSet.getString("email"));
                     return true;
                 }
                 return false; 
